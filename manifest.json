@@ -1,5 +1,6 @@
 {
-  "name": "Faker",
+  "editorType": ["figma"],
+  "name": "Quire Faker",
   "id": "833836762121994814",
   "api": "1.0.0",
   "main": "dist/code.js",
