@@ -2,6 +2,39 @@ import { IFakerOptions } from "./faker"
 
 const fakerOptions: IFakerOptions = [
   {
+    name: "Quire",
+    children: [
+      {
+        name: "Report Type",
+        methodName: "quire.reportType"
+      },
+      {
+        name: "Report Name",
+        methodName: "quire.reportName"
+      },
+      {
+        name: "Report Name 2",
+        methodName: "quire.reportName2"
+      },
+      {
+        name: "Report Status",
+        methodName: "quire.reportStatus"
+      },
+      {
+        name: "Site Address",
+        methodName: "quire.siteAddress"
+      },
+      {
+        name: "Project Number",
+        methodName: "quire.projectNumber"
+      },
+      {
+        name: "Permission Level",
+        methodName: "quire.permissionLevel"
+      }
+    ]
+  },
+  {
     name: "Name",
     children: [
       {

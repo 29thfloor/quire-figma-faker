@@ -1,4 +1,5 @@
 import * as Faker from "faker"
+import { Quire } from "./quire"
 import { IFakerOption, IPluginMessage } from "./faker"
 
 figma.showUI(__html__, { height: 340, width: 240 })
@@ -37,14 +38,27 @@ function traverseSelection() {
 function replaceText(fakerOption: IFakerOption) {
   if (textNodes.length) {
     const fakerMethodArray = fakerOption.methodName.split(".")
-    const fakerMethod = Faker[fakerMethodArray[0]][fakerMethodArray[1]]
-    for (const textNode of textNodes) {
-      figma.loadFontAsync(textNode.fontName as FontName).then(() => {
-        textNode.characters = fakerMethod().toString()
-      })
+    let fakerMethod;
+    if (fakerMethodArray[0] === "quire"){
+      const m = fakerMethodArray[1]
+      const q = new Quire()
+      for (const textNode of textNodes) {
+        figma.loadFontAsync(textNode.fontName as FontName).then(() => {
+          textNode.characters = q.fake(m).toString()
+        })
+      }
+    } else {
+      fakerMethod = Faker[fakerMethodArray[0]][fakerMethodArray[1]]
+      for (const textNode of textNodes) {
+        figma.loadFontAsync(textNode.fontName as FontName).then(() => {
+          textNode.characters = fakerMethod().toString()
+        })
+      }
     }
+    
+    
   } else {
-    figma.closePlugin("Select at least one text node before using Faker.")
+    figma.closePlugin("Select at least one text node before using Quire Faker.")
   }
 }
 

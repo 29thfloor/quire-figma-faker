@@ -72,7 +72,7 @@ class App extends React.Component<IProps, IState> {
     const options = this.getFilteredOptions()
     const optionsHeight = 260
     return (
-      <div style={{ height: optionsHeight, overflowX: "scroll" }}>
+      <div style={{ height: optionsHeight, overflowY: "scroll" }}>
         <div style={{ margin: "-10px 0" }}>
           {options.length ? (
             options.map((optionGroup) => this.renderOptionGroup(optionGroup))
@@ -251,7 +251,7 @@ class App extends React.Component<IProps, IState> {
   // ===========================================================================
 
   private static figmaStyles = {
-    border: "1px solid #e5e5e5",
+    border: "1px solid #efefef",
     fontFamily: "Inter, sans-serif",
     fontSize: {
       base: 11,
@@ -272,8 +272,8 @@ class App extends React.Component<IProps, IState> {
     fontWeight: App.figmaStyles.fontWeight.bold,
     position: "sticky",
     top: 0,
-    background: "#FFF",
-    borderBottom: App.figmaStyles.border,
+    background: "#f0f0f0",
+    borderBottom: App.figmaStyles.border
   }
 
   private static itemStyle: CSSProperties = {

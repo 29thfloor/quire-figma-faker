@@ -1,27 +1,32 @@
 body {
+  background-color: #f0f0f0;
+  color: #333;
   font: 12px sans-serif;
   text-align: center;
   margin: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 input {
+  background-color: #fff;
   border: none;
+  color: #222;
   outline: none;
   padding: 8px;
   border-radius: 2px;
-  box-shadow: inset 0 0 0 1px #e5e5e5;
+  box-shadow: inset 0 0 0 1px #111;
 }
 input:focus {
-  box-shadow: inset 0 0 0 2px #18a0fb;
+  box-shadow: inset 0 0 0 1px #1A7CAB;
 }
 .hoverable {
   border-radius: 2px;
   border: 2px solid transparent;
 }
 .hoverable:hover {
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(0, 0, 0, 0.08);
 }
 .hoverable:active {
-  border-color: #18a0fb;
+  border-color: #1A7CAB;
 }
